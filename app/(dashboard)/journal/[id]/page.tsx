@@ -1,4 +1,4 @@
-import Editor from "@/components/Editor";
+import EntryPageContent from "@/components/EntryPageContent";
 import { getUserByClerkId } from "@/utils/auth";
 import { db } from "@/utils/db";
 import React from "react";
@@ -12,16 +12,17 @@ const getEntry = async (entryId: string) => {
 				id: entryId,
 			},
 		},
+		include: {
+			analysis: true,
+		},
 	});
 };
 
 const EntryPage = async ({ params }: { params: { id: string } }) => {
 	const { id } = params;
-    const entry = await getEntry(id)
+	const entry = await getEntry(id)
 	return (
-		<div className="w-full h-full">
-			<Editor entry={entry} />
-		</div>
+		<EntryPageContent entryWithAnalysis={entry} />
 	);
 };
 

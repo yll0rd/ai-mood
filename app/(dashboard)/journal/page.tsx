@@ -7,7 +7,8 @@ import React from "react";
 
 const getEntries = async () => {
 	const user = await getUserByClerkId();
-	return await db.journalEntry.findMany({
+	// await analyze("Create me a vue component that renders a counting number");
+	const _entries = await db.journalEntry.findMany({
 		where: {
 			userId: user!.id,
 		},
@@ -15,6 +16,8 @@ const getEntries = async () => {
 			createdAt: "desc",
 		},
 	});
+
+	return _entries;
 };
 const JournalPage = async () => {
 	const entries = await getEntries();
