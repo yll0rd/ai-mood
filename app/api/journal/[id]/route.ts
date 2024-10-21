@@ -20,7 +20,7 @@ export const PATCH = async (request: Request, { params }: { params: { id: string
 		where: {
 			userId_id: {
                 id: journalEntryId,
-                userId: user!.id
+                userId: user.id
             }
 		},
         data: {
@@ -39,6 +39,7 @@ export const PATCH = async (request: Request, { params }: { params: { id: string
         },
         create: {
             entryId: entry.id,
+            userId: user.id,
             ...analysis!
         },
         update: {

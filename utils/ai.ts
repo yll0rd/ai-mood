@@ -29,6 +29,12 @@ const parser = StructuredOutputParser.fromZodSchema(
 			.describe(
 				"a hexidecimal color code that represents the mood of the entry. Example: #0101fe for blue representing happiness"
 			),
+
+		sentimentScore: z
+			.number()
+			.describe(
+				"sentiment of the text and rated on a scale from -10 to 10, where -10 is extremely negative, 0 is neutral, and 10 is extremely positive."
+			),
 	})
 );
 
@@ -67,7 +73,7 @@ export const analyze = async (_prompt: string) => {
 	}
 };
 
-type JournalEntryType = Pick<JournalEntry, "id" | "content"| "createdAt">
+type JournalEntryType = Pick<JournalEntry, "id" | "content" | "createdAt">;
 export const qa = async (question: string, entries: JournalEntryType[]) => {
 	const docs = entries.map(
 		(entry) =>
@@ -88,6 +94,6 @@ export const qa = async (question: string, entries: JournalEntryType[]) => {
 		input_documents: relevantDocs,
 		question,
 	});
-    
+
 	return res.output_text;
 };

@@ -22,6 +22,7 @@ export const POST = async (request: Request) => {
 	const analysis = await analyze(content);
     await db.analysis.create({
         data: {
+			userId: user.id,
             entryId: entry.id,
 			...analysis!,
         }
