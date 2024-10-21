@@ -1,3 +1,4 @@
+import { cn } from "@/utils";
 import { Analysis as AnalysisType } from "@prisma/client";
 import React from "react";
 
@@ -26,20 +27,18 @@ const Analysis = ({ analysis }: { analysis: AnalysisType | null }) => {
 					{analysisData.map(({ name, value }, id) => (
 						<li
 							key={id}
-							className="flex items-center justify-between px-2 py-4 border-y border-black/10"
+							className={cn(
+								"flex px-2 py-4 border-y border-black/10  justify-between",
+								{
+									"flex-wrap gap-y-2": id < 2,
+									"items-center": id > 1,
+								}
+							)}
 						>
-							<span
-								className={`text-lg font-semibold ${
-									id === 0 && "flex-[50%]"
-								}`}
-							>
+							<span className="text-lg font-semibold">
 								{name}
 							</span>
-							<span
-								className={`${
-									id === 0 && "flex-[50%] text-end"
-								}`}
-							>
+							<span className={`${id > 2 && "text-start"}`}>
 								{value}
 							</span>
 						</li>
