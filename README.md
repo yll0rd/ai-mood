@@ -7,10 +7,10 @@
 <a href="#contribute">Contribute</a>
 </p>
 
-<p align="center">Simple description of what your project do or how to use it</p>
+<p align="center">An NLP-powered app that analyzes and tracks users' moods based on their journal entries through text recognition.</p>
 
 <p align="center">
-<a href="https://github.com/ShaanCoding">📱 Visit this Project</a>
+<a href="https://github.com/">📱 Visit this Project</a>
 </p>
 
 <h2 id="technologies">💻 Technologies</h2>
