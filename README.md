@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center" style="font-weight: bold;">AI-MOOD 💻</h1>
 
-## Getting Started
+<p align="center">
+<a href="#tech">Technologies</a>
+<a href="#started">Getting Started</a>
+<a href="#colab">Collaborators</a>
+<a href="#contribute">Contribute</a>
+</p>
 
-First, run the development server:
+<p align="center">Simple description of what your project do or how to use it</p>
+
+<p align="center">
+<a href="https://github.com/ShaanCoding">📱 Visit this Project</a>
+</p>
+
+<h2 id="technologies">💻 Technologies</h2>
+
+- NextJS
+- Prisma
+- ClerkJS
+- LangChain
+- Google Gen AI
+- NeonDB
+
+<h2 id="started">🚀 Getting started</h2>
+
+How to run the project locally
+
+<h3>Prerequisites</h3>
+
+Here you list all prerequisites necessary for running your project. For example:
+
+- [NodeJS](https://nodejs.org/)
+- [NextJS](https://github.com)
+- [Prisma](https://www.prisma.io/orm)
+- [Langchain](https://js.langchain.com/docs/)
+- [NeonDB Account](https://neon.tech)
+- [Google Gen AI Api Key](https://aistudio.google.com/)
+
+<h3>Environment Setup</h3>
+
+<ol>
+<li>
+Copy the `.env.example` to `.env` and fill in the required environment variables:
+
+```bash
+cp .env.example .env
+```
+
+</li>
+<li>
+If you have any environment variables specific to your local environment, copy .env.local.example to .env.local and set them up as well:
+
+```bash
+
+cp .env.local.example .env.local
+```
+
+Make sure to add your `GOOGLE_GEN_AI_API_KEY`, `DATABASE_URL` (from NeonDB), and any other required environment variables in the .env or .env.local files.
+</li>
+</ol>
+
+<h3>Cloning</h3>
+
+How to clone your project
+
+```bash
+git clone https://github.com/yll0rd/ai-mood.git
+```
+
+<h3>Installation</h3>
+
+```bash
+cd ai-mood
+npm install
+```
+
+<h3>Prisma Setup</h3>
+
+Once the repository is cloned, you need to generate Prisma Client and apply migrations:
+
+<ol>
+<li>
+Push the Prisma schema to your NeonDB:
+
+```bash
+npx prisma db push
+```
+
+</li>
+<li>
+Generate the Prisma client:
+
+```bash
+npx prisma generate
+```
+
+</li>
+</ol>
+<h3>Starting</h3>
+
+How to start your project
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h2 id="tests">⚙️ Running Tests</h2>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run tests, run the following command
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+  npm run test
+```
 
-## Learn More
+<h2 id="colab">🤝 Collaborators</h2>
 
-To learn more about Next.js, take a look at the following resources:
+<p>Special thank you for all people that contributed for this project.</p>
+<table>
+<tr>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<td align="center">
+<a href="https://github.com/yll0rd">
+<img src="https://avatars.githubusercontent.com/u/114886588?v=4 " width="100px;" alt="Youmbi leo Profile Picture"/><br>
+<sub>
+<b>Youmbi Leo</b>
+</sub>
+</a>
+</td>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+</tr>
+</table>
 
-## Deploy on Vercel
+<h2 id="contribute">📫 Contribute</h2>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are always welcome!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. `git clone https://github.com/yll0rd/ai-mood.git`
+2. `git checkout -b feature/NAME`
+3. Follow commit patterns
+4. Open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
+
+<h3>Documentations that might help</h3>
+
+[📝 How to  set up Clerk with environment variables, including integrating it with React and Next.js.](https://clerk.com/docs/quickstarts/nextjs)
+
+[📝 How to connect a Next.js application to Neon](https://neon.tech/docs/guides/nextjs)
