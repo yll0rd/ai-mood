@@ -12,6 +12,8 @@ import { Document } from "langchain/document";
 import { loadQARefineChain } from "langchain/chains";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 
+const modelName = process.env.LLM_MODEL_NAME
+
 const parser = StructuredOutputParser.fromZodSchema(
 	z.object({
 		mood: z
@@ -60,7 +62,7 @@ export const analyze = async (_prompt: string) => {
 	// const model = new ChatOpenAI({ temperature: 0, modelName: "gpt-3.5-turbo" });
 	const model = new ChatGoogleGenerativeAI({
 		temperature: 0,
-		modelName: "gemini-1.5-flash",
+		modelName,
 	});
 	const result = await model.invoke([{ role: "user", content: prompt }]);
 	// console.log(result.content);
@@ -84,7 +86,7 @@ export const qa = async (question: string, entries: JournalEntryType[]) => {
 	);
 	const model = new ChatGoogleGenerativeAI({
 		temperature: 0,
-		modelName: "gemini-1.5-flash",
+		modelName,
 	});
 	const chain = loadQARefineChain(model);
 	const embeddings = new GoogleGenerativeAIEmbeddings();
