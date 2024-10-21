@@ -1,7 +1,7 @@
 "use client";
 
 import { askQuestion } from "@/utils/api";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 
 const Question = () => {
 	const [value, setValue] = useState("");
